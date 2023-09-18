@@ -1,22 +1,23 @@
 'use strict'
 const btn=document.querySelector('.btn');
-const input=document.querySelector('#myInput');
-const form =document.querySelector('form');
+const input=document.getElementById('myInput');
+const list =document.getElementById('list')
 
-let savedText=[];
+
+
 const addText=function(){
-    if(input.value.trim() !=''){
-        let inputText=input.value;
-        savedText.push(inputText);
-        savedText.forEach(text=>{
-            const html=`<ul id="myList">${text}</ul>`;
-            form.insertAdjacentHTML('afterend',html);
-    
-        })
-       
-        // const li=document.createElement('li');
-        // li.innerText=input.value;
-        // list.appendChild(li);
+    let textInput=input.value;
+    if(textInput.trim() !==''){
+        list.classList.remove('hidden')
+        list.innerHTML+=`
+       <div class="text">
+            <span>
+                ${textInput} 
+            </span>
+      </div>`
+    }else{
+        alert('Please enter a text!')
     }
 }
+
 btn.addEventListener('click',addText)
