@@ -3,21 +3,32 @@ const btn=document.querySelector('.btn');
 const input=document.getElementById('myInput');
 const list =document.getElementById('list')
 
+const saveLocalStorage=function(){
+    localStorage.setItem('todoData',list.innerHTML);
+}
+const getLocalStorage=function(){
+    const data=localStorage.getItem('todoData')
+    list.innerHTML=data;
+}
 
 
-const addText=function(){
-    let textInput=input.value;
-    if(textInput.trim() !==''){
+btn.addEventListener('click',function(e){
+    e.preventDefault();
+    let text =input.value;
+    console.log(list.innerHTML);
+    if(text.trim() !==''){
         list.classList.remove('hidden')
         list.innerHTML+=`
-       <div class="text">
-            <span>
-                ${textInput} 
-            </span>
-      </div>`
+          <li class="text">
+              ${text} 
+          </li>`;
+     
     }else{
         alert('Please enter a text!')
     }
-}
-
-btn.addEventListener('click',addText)
+    input.value="";
+    saveLocalStorage();
+ 
+   
+})
+getLocalStorage()
