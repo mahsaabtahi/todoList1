@@ -1,7 +1,7 @@
 'use strict'
-const btn=document.querySelector('.btn');
-const input=document.getElementById('myInput');
-const list =document.getElementById('list')
+const btn=document.querySelector('.todo-form-btn');
+const input=document.querySelector('.todo-form-text');
+const list =document.querySelector('.todo-list');
 
 const saveLocalStorage=function(){
     localStorage.setItem('todoData',list.innerHTML);
@@ -15,13 +15,17 @@ const getLocalStorage=function(){
 btn.addEventListener('click',function(e){
     e.preventDefault();
     let text =input.value;
-    console.log(list.innerHTML);
+    const span='\u00d7';
     if(text.trim() !==''){
         list.classList.remove('hidden')
+        
         list.innerHTML+=`
-          <li class="text">
-              ${text} 
+          <li class="todo-list-text">
+            ${text}
+            <span class="todo-list-span"> ${span} </span>
           </li>`;
+        
+        
      
     }else{
         alert('Please enter a text!')

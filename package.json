@@ -1,0 +1,14 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "\"to creat package for todolist\"",
+  "main": "todo.js",
+  "scripts": {
+    "compile:sass":"node-sass sass/main.scss css/todo.css -w"
+  },
+  "author": "mahsa",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
