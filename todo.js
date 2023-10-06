@@ -36,10 +36,11 @@ btn.addEventListener('click',function(e){
  
    
 })
-getLocalStorage()
+
 
 list.addEventListener('click',function(e){
     if(e.target.tagName === "SPAN"){
         e.target.parentElement.remove();
     }
 },false);
+getLocalStorage();
