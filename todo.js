@@ -20,10 +20,11 @@ btn.addEventListener('click',function(e){
         list.classList.remove('hidden')
         
         list.innerHTML+=`
-          <li class="todo-list-text">
+          <li class="todo-list-items">
             ${text}
-            <span class="todo-list-span"> ${span} </span>
-          </li>`;
+            <span class="todo-list-items-delete"> ${span} </span>
+          </li>
+         `;
         
         
      
